@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /enviar.php
+Disallow: /config.php
+Disallow: /probar.php
+
+Sitemap: https://monica11.com.co/sitemap.xml
