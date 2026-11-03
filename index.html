@@ -294,14 +294,23 @@ header .wrap.nav{gap:18px}
 .dnote{font-size:12.5px;font-weight:500;color:var(--mut);margin:0}
 .demo-f .err{border-color:#f87171!important}
 @media(max-width:900px){.demo{grid-template-columns:1fr;padding:26px 20px}.demo h2{font-size:28px}}
+
+.hlogin{font-weight:700;font-size:14px;color:#0f172a;padding:10px 14px;border:1px solid #cbd5e1;border-radius:12px;white-space:nowrap;transition:background .2s}
+.hlogin:hover{background:#f1f5f9}
+.mlogin{display:none!important}
+.portal{display:flex;align-items:center;justify-content:space-between;gap:32px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:24px;padding:34px 40px}
+.portal h2{font-size:28px;line-height:1.2;margin:8px 0 10px}.portal p{color:var(--mut);max-width:560px}
+.portal-b{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:1060px){.hlogin{display:none}.mlogin{display:flex!important}}
+@media(max-width:900px){.portal{flex-direction:column;align-items:flex-start;padding:26px 20px}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="logo" href="#" aria-label="PegaSoft"><img src="logo-navy.png" alt="PegaSoft"></a>
-<nav class="menu" id="menu" aria-label="Principal"><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#ef4444"></i>Facturación<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#facturacion"><b>Facturación electrónica</b><small>Cumple con la DIAN sin complicaciones</small></a><a href="#folios"><b>Planes y folios</b><small>Paquetes por versión de Mónica</small></a><a href="#facturacion"><b>Certificado electrónico</b><small>Firma y certificados digitales</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#06b6d4"></i>Mónica<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#monica"><b>Programa contable</b><small>Versiones 8.5, 9, 10 y 11</small></a><a href="#monica-videos"><b>Videos por versión</b><small>Aprende paso a paso</small></a><a href="#soporte"><b>Soporte técnico</b><small>$80.000 por hora o fracción</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#8b5cf6"></i>Servicios<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#servicios"><b>Consultoría TI</b><small>Procesos, software y automatización</small></a><a href="#nube"><b>Nube y escritorios remotos</b><small>Tu información desde cualquier lugar</small></a><a href="#seguridad"><b>Seguridad</b><small>Protección de tu información</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#f59e0b"></i>Odoo<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#odoo"><b>Odoo 19</b><small>ERP todo en uno para tu empresa</small></a><a href="#odoo"><b>Oferta Odoo 19</b><small>Implementación con acompañamiento</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#22c55e"></i>Más<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#videos"><b>Videos</b><small>Canal de YouTube PegaSoft</small></a><a href="#blog"><b>Blog</b><small>Guías sobre Mónica, DIAN y Odoo</small></a><a href="#nosotros"><b>Quiénes somos</b><small>+24 años de experiencia</small></a><a href="#demo"><b>Demo gratuita</b><small>Agenda una demostración</small></a><a href="#contacto"><b>Contacto</b><small>Escríbenos o llámanos</small></a></div></div><a class="ml" href="#soporte">Soporte</a></nav>
-<a class="btn btn-p hcta" href="#demo"><span class="dot"></span>Demo gratis <span>→</span></a>
+<nav class="menu" id="menu" aria-label="Principal"><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#ef4444"></i>Facturación<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#facturacion"><b>Facturación electrónica</b><small>Cumple con la DIAN sin complicaciones</small></a><a href="#folios"><b>Planes y folios</b><small>Paquetes por versión de Mónica</small></a><a href="#facturacion"><b>Certificado electrónico</b><small>Firma y certificados digitales</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#06b6d4"></i>Mónica<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#monica"><b>Programa contable</b><small>Versiones 8.5, 9, 10 y 11</small></a><a href="#monica-videos"><b>Videos por versión</b><small>Aprende paso a paso</small></a><a href="#soporte"><b>Soporte técnico</b><small>$80.000 por hora o fracción</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#8b5cf6"></i>Servicios<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#servicios"><b>Consultoría TI</b><small>Procesos, software y automatización</small></a><a href="#nube"><b>Nube y escritorios remotos</b><small>Tu información desde cualquier lugar</small></a><a href="#seguridad"><b>Seguridad</b><small>Protección de tu información</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#f59e0b"></i>Odoo<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#odoo"><b>Odoo 19</b><small>ERP todo en uno para tu empresa</small></a><a href="#odoo"><b>Oferta Odoo 19</b><small>Implementación con acompañamiento</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#22c55e"></i>Más<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#videos"><b>Videos</b><small>Canal de YouTube PegaSoft</small></a><a href="#blog"><b>Blog</b><small>Guías sobre Mónica, DIAN y Odoo</small></a><a href="#nosotros"><b>Quiénes somos</b><small>+24 años de experiencia</small></a><a href="https://pegasoft.com.co/web/login" target="_blank" rel="noopener"><b>Iniciar sesión</b><small>Portal de clientes</small></a><a href="#demo"><b>Demo gratuita</b><small>Agenda una demostración</small></a><a href="#contacto"><b>Contacto</b><small>Escríbenos o llámanos</small></a></div></div><a class="ml" href="#soporte">Soporte</a><a class="ml mlogin" href="https://pegasoft.com.co/web/login" target="_blank" rel="noopener">Iniciar sesión</a></nav>
+<a class="hlogin" href="https://pegasoft.com.co/web/login" target="_blank" rel="noopener">Iniciar sesión</a><a class="btn btn-p hcta" href="#demo"><span class="dot"></span>Demo gratis <span>→</span></a>
 <button type="button" class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></header>
 
@@ -487,6 +496,14 @@ header .wrap.nav{gap:18px}
 <div class="vcard"><button type="button" class="vthumb" data-vid="iA3jOHugkac" aria-label="Reproducir video de PegaSoft" style="background-image:url('https://i.ytimg.com/vi/iA3jOHugkac/hqdefault.jpg')"><span class="vplay"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button></div></div>
 </div></section>
 
+<section id="portal" style="padding-top:0"><div class="wrap">
+<div class="portal">
+<div><span class="tag">PORTAL DE CLIENTES</span><h2>Ingresa a tu cuenta PegaSoft</h2>
+<p>Accede con tu usuario para consultar tus servicios, solicitudes y documentos. Si aún no tienes cuenta, pídela por WhatsApp y te la creamos.</p></div>
+<div class="portal-b"><a class="btn btn-p" href="https://pegasoft.com.co/web/login" target="_blank" rel="noopener">Iniciar sesión →</a>
+<a class="btn btn-o" href="https://wa.me/573003450000?text=Hola%2C%20quiero%20crear%20mi%20cuenta%20en%20el%20portal%20de%20PegaSoft." target="_blank" rel="noopener">Solicitar mi cuenta</a></div>
+</div></div></section>
+
 <section id="demo" style="padding-top:0"><div class="wrap">
 <div class="demo">
 <div class="demo-t"><span class="tag">DEMOSTRACIÓN GRATUITA</span><h2>Agenda tu demo, sin costo ni compromiso</h2>
@@ -588,7 +605,7 @@ header .wrap.nav{gap:18px}
 </script>
 <script>
 (function(){
-  var sel=['.head','.vcard','.post','.demo','.plan','.folio','.support','.promo','.shot','.about>div','.stat','.grid3 .card','.mcards .card','.mside','.steps .step','.sec .wrap>div','.feat div','.odoo>div:first-child','.apps','.apps div','.final>div','.final>form'];
+  var sel=['.head','.vcard','.post','.demo','.portal','.plan','.folio','.support','.promo','.shot','.about>div','.stat','.grid3 .card','.mcards .card','.mside','.steps .step','.sec .wrap>div','.feat div','.odoo>div:first-child','.apps','.apps div','.final>div','.final>form'];
   var els=[].slice.call(document.querySelectorAll(sel.join(',')));
   els.forEach(function(el){
     el.classList.add('rv');
