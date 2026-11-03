@@ -169,13 +169,34 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
 .stat.big em{font-style:normal}
 .stat.big small{display:block;font-size:16px;margin-top:6px}
 @media(max-width:900px){.about{grid-template-columns:1fr}.about h2{font-size:30px}}
+
+.ph{max-width:1000px;margin:56px auto 0;font-size:22px;color:#fff;letter-spacing:-.01em;text-align:center}
+.promos{display:grid;gap:28px;max-width:1000px;margin:28px auto 0;align-items:start}
+.promos.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.promos.one{grid-template-columns:minmax(0,520px);justify-content:center}
+.promo,.shot{margin:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--card);transition:transform .25s,border-color .25s,box-shadow .25s}
+.promo:hover,.shot:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.45);box-shadow:0 20px 50px rgba(34,211,238,.08)}
+.pimg{display:block;position:relative;width:100%;padding:0;border:0;background:#0b1126;cursor:zoom-in}
+.pimg img{display:block;width:100%;height:auto}
+.pimg:after{content:"Ampliar";position:absolute;right:12px;bottom:12px;padding:6px 12px;border-radius:99px;background:rgba(6,10,22,.8);border:1px solid var(--line);color:#fff;font-size:12px;font-weight:700;opacity:0;transition:opacity .2s}
+.pimg:hover:after,.pimg:focus-visible:after{opacity:1}
+.promo figcaption,.shot figcaption{padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--mut);font-size:14px}
+.promo figcaption b{color:#fff;font-size:16px}
+.promo .btn-p{padding:10px 16px;font-size:14px}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(3,6,14,.93);display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .25s}
+#lb.open{opacity:1;pointer-events:auto}
+#lb img{max-width:min(96vw,1100px);max-height:90vh;width:auto;height:auto;border-radius:12px;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+.lbx{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.08);color:#fff;font-size:26px;line-height:1;cursor:pointer}
+.lbx:hover{border-color:var(--c)}
+@media(max-width:1180px){.menu{gap:14px;font-size:13px}}
+@media(max-width:1040px){.menu{display:none}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="logo" href="#" aria-label="PegaSoft"><img src="logo-oscuro.png" alt="PegaSoft"></a>
-<nav class="menu"><a href="#facturacion">Facturación electrónica</a><a href="#servicios">Consultoría TI</a><a href="#monica">Mónica</a><a href="#seguridad">Seguridad</a><a href="#odoo">Odoo</a><a href="#videos">Videos</a><a href="#nosotros">Quiénes somos</a><a href="#soporte">Soporte</a></nav>
+<nav class="menu"><a href="#facturacion">Facturación electrónica</a><a href="#servicios">Consultoría TI</a><a href="#monica">Mónica</a><a href="#nube">Nube</a><a href="#seguridad">Seguridad</a><a href="#odoo">Odoo</a><a href="#videos">Videos</a><a href="#nosotros">Quiénes somos</a><a href="#soporte">Soporte</a></nav>
 <a class="btn btn-p" href="#contacto">Hablemos</a>
 </div></header>
 
@@ -204,7 +225,10 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
 <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div><h3>Facturación electrónica</h3><p>Emite y gestiona tus facturas desde un solo lugar, sin reprocesos.</p></div>
 <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="m8 3-6 9 6 9M16 3l6 9-6 9"/></svg></div><h3>Desarrollo de software</h3><p>Soluciones a la medida cuando tu operación necesita algo propio.</p></div>
 <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div><h3>Todo integrado con Odoo</h3><p>Ventas, inventario y contabilidad conectados con tu facturación.</p></div>
-</div></div></section>
+</div>
+<h3 class="ph">Planes y paquetes</h3>
+<div class="promos two"><figure class="promo"><button class="pimg" type="button" data-full="img/certificado-electronico.webp" aria-label="Ampliar: Certificado electrónico para facturación ilimitada"><img src="img/certificado-electronico.webp" width="853" height="1280" loading="lazy" alt="Afiche: certificado electrónico para facturación electrónica ilimitada, con envío ilimitado de documentos a la DIAN, soporte y renovación anual. Pago único $297.000."></button><figcaption><b>Certificado electrónico para facturación ilimitada</b><a class="btn btn-p btn-sm" href="#contacto" data-msg="Hola, quiero información sobre el certificado electrónico para facturación electrónica.">Solicitar información →</a></figcaption></figure><figure class="promo"><button class="pimg" type="button" data-full="img/folios.webp" aria-label="Ampliar: Paquetes de folios"><img src="img/folios.webp" width="1024" height="1172" loading="lazy" alt="Afiche: paquetes de folios de 1.000, 2.500, 5.000 y 10.000 con sus precios en pesos colombianos."></button><figcaption><b>Paquetes de folios</b><a class="btn btn-p btn-sm" href="#contacto" data-msg="Hola, quiero información sobre los paquetes de folios.">Solicitar información →</a></figcaption></figure></div>
+</div></section>
 <section id="servicios"><div class="wrap">
 <div class="head"><span class="tag">SERVICIOS DE CONSULTORÍA TI</span><h2>De la estrategia a la operación diaria</h2><p>Seis frentes para que la tecnología deje de ser un gasto y se convierta en una ventaja.</p></div>
 <div class="grid3">
@@ -217,7 +241,7 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
 </div></div></section>
 
 <section id="monica"><div class="wrap">
-<div class="head"><span class="tag">PROGRAMA CONTABLE · MÓNICA</span><h2>Mónica, su asistente en los negocios</h2><p>Facturación, inventarios y contabilidad en un solo programa, pensado para pequeñas y medianas empresas que venden productos. Disponible en las versiones 8.5, 9 y 10.</p></div>
+<div class="head"><span class="tag">PROGRAMA CONTABLE · MÓNICA</span><h2>Mónica, su asistente en los negocios</h2><p>Facturación, inventarios y contabilidad en un solo programa, pensado para pequeñas y medianas empresas que venden productos. Disponible en las versiones 8.5, 9, 10 y 11.</p></div>
 <div class="monica">
 <div class="mcards"><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div><h3>Facturación</h3><p>Crea, modifica y controla tus facturas, con devoluciones y consolidados de ventas por fechas y clientes.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div><h3>Inventarios</h3><p>Existencias, listas de precios, costos, órdenes de compra y kárdex de cada producto.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15v-4M12 15V8M16 15v-6"/></svg></div><h3>Contabilidad</h3><p>Partida doble, libro diario, mayor, balance y estado de ganancias y pérdidas.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7h18v12H3z"/><path d="M3 11h18M7 15h3"/></svg></div><h3>Cuentas por cobrar y pagar</h3><p>Saldos de clientes y proveedores, vencimientos y pagos parciales al día.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 10 12 4l9 6M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18"/></svg></div><h3>Bancos y cuentas corrientes</h3><p>Cheques, depósitos y conciliación con el estado de cuenta del banco.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 19h16"/></svg></div><h3>Reportes y respaldos</h3><p>Informes listos para imprimir o exportar y copias de seguridad de tu información.</p></div></div>
 <aside class="mside">
@@ -226,6 +250,7 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
 <a class="ver" href="#contacto" data-ver="8.5"><span><b>Mónica 8.5</b><small>Pedir información</small></span><i>→</i></a>
 <a class="ver" href="#contacto" data-ver="9"><span><b>Mónica 9</b><small>Pedir información</small></span><i>→</i></a>
 <a class="ver" href="#contacto" data-ver="10"><span><b>Mónica 10</b><small>Pedir información</small></span><i>→</i></a>
+<a class="ver" href="#contacto" data-ver="11"><span><b>Mónica 11</b><small>Pedir información</small></span><i>→</i></a>
 <ul class="mfacts">
 <li>De un computador a una red de hasta 25 equipos.</li>
 <li>Exporta tus informes a PDF, Excel y Word.</li>
@@ -233,7 +258,14 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
 </ul>
 </aside>
 </div>
+<h3 class="ph">Planes con facturación electrónica</h3>
+<div class="promos one"><figure class="promo"><button class="pimg" type="button" data-full="img/monica-planes.webp" aria-label="Ampliar: Planes de facturación electrónica con Mónica"><img src="img/monica-planes.webp" width="926" height="1280" loading="lazy" alt="Afiche: planes de facturación electrónica con Mónica, en tres niveles: Principiante, Profesional y Experto, con soporte e implementación incluidos."></button><figcaption><b>Planes de facturación electrónica con Mónica</b><a class="btn btn-p btn-sm" href="#contacto" data-msg="Hola, quiero información sobre los planes de facturación electrónica con Mónica.">Solicitar información →</a></figcaption></figure></div>
 <p class="mnote">Los módulos disponibles pueden variar según la versión. MONICA es una marca de Technotel Inc.</p>
+</div></section>
+
+<section id="nube"><div class="wrap">
+<div class="head"><span class="tag">NUBE</span><h2>Tu oficina y tu información en la nube</h2><p>Escritorios remotos y servidores en la nube para trabajar desde cualquier lugar y con cualquier dispositivo.</p></div>
+<div class="promos two"><figure class="promo"><button class="pimg" type="button" data-full="img/escritorios-remotos.webp" aria-label="Ampliar: Escritorios remotos en la nube"><img src="img/escritorios-remotos.webp" width="1100" height="733" loading="lazy" alt="Afiche: escritorios remotos en la nube para acceder a tu escritorio de trabajo desde cualquier lugar y dispositivo."></button><figcaption><b>Escritorios remotos en la nube</b><a class="btn btn-p btn-sm" href="#contacto" data-msg="Hola, quiero información sobre los escritorios remotos en la nube.">Cotizar →</a></figcaption></figure><figure class="promo"><button class="pimg" type="button" data-full="img/nube-planes.webp" aria-label="Ampliar: Servidor en la nube: planes"><img src="img/nube-planes.webp" width="1024" height="1160" loading="lazy" alt="Afiche: planes de servidor en la nube Básico, Intermedio y Profesional, con ventajas y oportunidades."></button><figcaption><b>Servidor en la nube: planes</b><a class="btn btn-p btn-sm" href="#contacto" data-msg="Hola, quiero información sobre los planes de servidor en la nube.">Solicitar información →</a></figcaption></figure></div>
 </div></section>
 
 <div class="sec" id="seguridad"><div class="wrap">
@@ -248,10 +280,8 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
 <div><span class="tag">AUTOMATIZACIÓN CON ODOO</span><h2 style="font-size:42px;letter-spacing:-.03em;line-height:1.1;margin:14px 0">Deja atrás los procesos manuales</h2>
 <p style="color:var(--mut);font-size:18px">Ventas, inventario, contabilidad, compras y recursos humanos en una sola plataforma. Te acompañamos en la implementación, la capacitación y el soporte.</p><br>
 <div class="cta-row"><a class="btn btn-p" href="#contacto">Empezar ahora →</a><a class="btn btn-o" href="#contacto">Ver una demostración</a></div></div>
-<div class="apps">
-<div><i style="background:#fb7185;color:#fb7185"></i>Ventas</div><div><i style="background:#60a5fa;color:#60a5fa"></i>CRM</div><div><i style="background:#34d399;color:#34d399"></i>Inventario</div><div><i style="background:#fbbf24;color:#fbbf24"></i>Compras</div>
-<div><i style="background:#a78bfa;color:#a78bfa"></i>Contabilidad</div><div><i style="background:#22d3ee;color:#22d3ee"></i>Facturación</div><div><i style="background:#f472b6;color:#f472b6"></i>Nómina</div><div><i style="background:#a3e635;color:#a3e635"></i>Proyectos</div>
-</div></div></section>
+<figure class="shot"><button class="pimg" type="button" data-full="img/odoo-apps.webp" aria-label="Ampliar: aplicaciones de Odoo 19"><img src="img/odoo-apps.webp" width="848" height="673" loading="lazy" alt="Pantalla de inicio de Odoo 19 con aplicaciones como Ventas, Contactos, Contabilidad, WhatsApp, Inventario, Punto de venta, Compras, Sitio web y Manufactura."></button><figcaption>Aplicaciones de Odoo 19</figcaption></figure></div>
+<div class="wrap"><h3 class="ph">Oferta Odoo 19</h3><div class="promos one"><figure class="promo"><button class="pimg" type="button" data-full="img/odoo19-oferta.webp" aria-label="Ampliar: Transforme su empresa con Odoo 19"><img src="img/odoo19-oferta.webp" width="768" height="1274" loading="lazy" alt="Afiche: Transforme su empresa con Odoo 19. Módulos de contabilidad, ventas, CRM, compras, inventario, producción, POS, recursos humanos y nómina, con localización Colombia."></button><figcaption><b>Transforme su empresa con Odoo 19</b><a class="btn btn-p btn-sm" href="#contacto" data-msg="Hola, quiero agendar una demostración de Odoo 19.">Agendar demo →</a></figcaption></figure></div></div></section>
 
 <section id="videos" style="padding-top:0"><div class="wrap">
 <div class="head"><span class="tag">VIDEOS</span><h2>Míralo en acción</h2><p>Videos de nuestro canal de YouTube sobre nuestros productos y servicios.</p></div>
@@ -302,6 +332,7 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
 <footer id="soporte"><div class="wrap"><div><a class="logo" style="align-items:flex-start" href="#" aria-label="PegaSoft"><img src="logo-oscuro.png" alt="PegaSoft"></a><p style="margin-top:10px">Especialistas en desarrollo de software y facturación electrónica. +24 años de experiencia.</p></div>
 <div><b>Contacto</b><p><a href="mailto:info@pegasoft.com.co">info@pegasoft.com.co</a><br><a href="tel:+576015275522">+601 527 5522</a><br><a href="https://wa.me/573003450000">+57 300 345 00 00</a></p></div><div><b>Empresa</b><p>Soporte · Política de privacidad · Términos</p></div></div></footer>
 <a class="wa" href="https://wa.me/573003450000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 13.9c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.3z"/></svg></a>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Imagen ampliada" aria-hidden="true"><button class="lbx" type="button" aria-label="Cerrar">×</button><img alt=""></div>
 <script>
 /* Para agregar más videos, añade una línea: {id:'ID_DEL_VIDEO',title:'Título'} */
 (function(){
@@ -336,7 +367,7 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
 </script>
 <script>
 (function(){
-  var sel=['.head','.vcard','.about>div','.stat','.grid3 .card','.mcards .card','.mside','.steps .step','.sec .wrap>div','.feat div','.odoo>div:first-child','.apps','.apps div','.final>div','.final>form'];
+  var sel=['.head','.vcard','.promo','.shot','.about>div','.stat','.grid3 .card','.mcards .card','.mside','.steps .step','.sec .wrap>div','.feat div','.odoo>div:first-child','.apps','.apps div','.final>div','.final>form'];
   var els=[].slice.call(document.querySelectorAll(sel.join(',')));
   els.forEach(function(el){
     el.classList.add('rv');
@@ -373,6 +404,24 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
     requestAnimationFrame(step);
   });},{threshold:.5});
   io.observe(el);
+})();
+</script>
+<script>
+(function(){
+  var lb=document.getElementById('lb');if(!lb)return;
+  var li=lb.querySelector('img'),x=lb.querySelector('.lbx'),last=null;
+  function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');document.body.style.overflow='';if(last)last.focus();}
+  document.querySelectorAll('.pimg').forEach(function(b){
+    b.addEventListener('click',function(){
+      last=b;li.src=b.getAttribute('data-full');li.alt=b.querySelector('img').alt;
+      lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';x.focus();
+    });
+  });
+  lb.addEventListener('click',function(e){if(e.target!==li)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('open'))close();});
+  document.querySelectorAll('[data-msg]').forEach(function(b){
+    b.addEventListener('click',function(){var t=document.querySelector('#contacto textarea');if(t){t.value=b.getAttribute('data-msg');}});
+  });
 })();
 </script>
 </body></html>
