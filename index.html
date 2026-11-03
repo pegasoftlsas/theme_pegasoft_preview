@@ -128,13 +128,27 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
   *,*:before,*:after{animation:none!important;transition:none!important}
   .js .rv{opacity:1;translate:none}
 }
+
+.monica{display:grid;grid-template-columns:1.5fr .8fr;gap:24px;align-items:start}
+.mcards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.mside{border:1px solid var(--line);border-radius:24px;padding:28px;background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.02));box-shadow:0 30px 80px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.1);position:sticky;top:100px}
+.mside h3{font-size:20px;color:#fff;margin-bottom:6px}.mside>p{color:var(--mut);font-size:15px;margin-bottom:18px}
+.ver{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;margin-bottom:10px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.04);transition:transform .2s,border-color .2s,background .2s}
+.ver b{display:block;color:#fff;font-size:17px}.ver small{color:var(--mut);font-size:13px}
+.ver i{font-style:normal;color:#22d3ee;font-weight:800;transition:transform .2s}
+.ver:hover{transform:translateX(4px);border-color:rgba(34,211,238,.55);background:rgba(34,211,238,.07)}.ver:hover i{transform:translateX(4px)}
+.mfacts{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:8px;color:var(--mut);font-size:14px}
+.mfacts li:before{content:"✓";color:#22d3ee;font-weight:800;margin-right:8px}
+.mnote{text-align:center;color:var(--mut);font-size:13px;margin-top:26px;opacity:.8}
+@media(max-width:900px){.monica{grid-template-columns:1fr}.mside{position:static}}
+@media(max-width:560px){.mcards{grid-template-columns:1fr}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="logo" href="#" aria-label="PegaSoft"><img src="logo-oscuro.png" alt="PegaSoft"></a>
-<nav class="menu"><a href="#facturacion">Facturación electrónica</a><a href="#servicios">Consultoría TI</a><a href="#seguridad">Seguridad</a><a href="#odoo">Odoo</a><a href="#soporte">Soporte</a></nav>
+<nav class="menu"><a href="#facturacion">Facturación electrónica</a><a href="#servicios">Consultoría TI</a><a href="#monica">Mónica</a><a href="#seguridad">Seguridad</a><a href="#odoo">Odoo</a><a href="#soporte">Soporte</a></nav>
 <a class="btn btn-p" href="#contacto">Hablemos</a>
 </div></header>
 
@@ -174,6 +188,26 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
 <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><h3>Mantenimiento proactivo</h3><p>Prevenimos fallas antes de que detengan tu operación.</p></div>
 <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Monitoreo continuo</h3><p>Vigilamos tus sistemas y actuamos ante cualquier señal de riesgo.</p></div>
 </div></div></section>
+
+<section id="monica"><div class="wrap">
+<div class="head"><span class="tag">PROGRAMA CONTABLE · MÓNICA</span><h2>Mónica, su asistente en los negocios</h2><p>Facturación, inventarios y contabilidad en un solo programa, pensado para pequeñas y medianas empresas que venden productos. Disponible en las versiones 8.5, 9 y 10.</p></div>
+<div class="monica">
+<div class="mcards"><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div><h3>Facturación</h3><p>Crea, modifica y controla tus facturas, con devoluciones y consolidados de ventas por fechas y clientes.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div><h3>Inventarios</h3><p>Existencias, listas de precios, costos, órdenes de compra y kárdex de cada producto.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 19V5M4 19h16M8 15v-4M12 15V8M16 15v-6"/></svg></div><h3>Contabilidad</h3><p>Partida doble, libro diario, mayor, balance y estado de ganancias y pérdidas.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7h18v12H3z"/><path d="M3 11h18M7 15h3"/></svg></div><h3>Cuentas por cobrar y pagar</h3><p>Saldos de clientes y proveedores, vencimientos y pagos parciales al día.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 10 12 4l9 6M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18"/></svg></div><h3>Bancos y cuentas corrientes</h3><p>Cheques, depósitos y conciliación con el estado de cuenta del banco.</p></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 19h16"/></svg></div><h3>Reportes y respaldos</h3><p>Informes listos para imprimir o exportar y copias de seguridad de tu información.</p></div></div>
+<aside class="mside">
+<h3>Elige tu versión</h3>
+<p>Te ayudamos a escoger la que mejor se ajusta a tu negocio, e instalarla y capacitar a tu equipo.</p>
+<a class="ver" href="#contacto" data-ver="8.5"><span><b>Mónica 8.5</b><small>Pedir información</small></span><i>→</i></a>
+<a class="ver" href="#contacto" data-ver="9"><span><b>Mónica 9</b><small>Pedir información</small></span><i>→</i></a>
+<a class="ver" href="#contacto" data-ver="10"><span><b>Mónica 10</b><small>Pedir información</small></span><i>→</i></a>
+<ul class="mfacts">
+<li>De un computador a una red de hasta 25 equipos.</li>
+<li>Exporta tus informes a PDF, Excel y Word.</li>
+<li>Soporte y acompañamiento de PegaSoft.</li>
+</ul>
+</aside>
+</div>
+<p class="mnote">Los módulos disponibles pueden variar según la versión. MONICA es una marca de Technotel Inc.</p>
+</div></section>
 
 <div class="sec" id="seguridad"><div class="wrap">
 <div><span class="tag">SEGURIDAD DE LA INFORMACIÓN</span><h2>Protege lo que hace funcionar a tu empresa</h2><p>Tus datos, tus clientes y tu continuidad merecen una estrategia, no solo un antivirus.</p><br><a class="btn btn-p" href="#contacto" style="background:#fff;color:#0a1022">Más información →</a></div>
@@ -217,7 +251,7 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
 <a class="wa" href="https://wa.me/573003450000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 13.9c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.3z"/></svg></a>
 <script>
 (function(){
-  var sel=['.head','.grid3 .card','.steps .step','.sec .wrap>div','.feat div','.odoo>div:first-child','.apps','.apps div','.final>div','.final>form'];
+  var sel=['.head','.grid3 .card','.mcards .card','.mside','.steps .step','.sec .wrap>div','.feat div','.odoo>div:first-child','.apps','.apps div','.final>div','.final>form'];
   var els=[].slice.call(document.querySelectorAll(sel.join(',')));
   els.forEach(function(el){
     el.classList.add('rv');
@@ -233,6 +267,12 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
   window.addEventListener('scroll',onS,{passive:true});onS();
   document.querySelectorAll('.card').forEach(function(c){
     c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px');});
+  });
+  document.querySelectorAll('[data-ver]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=document.querySelector('#contacto textarea');
+      if(t){t.value='Hola, quiero información sobre Mónica '+b.getAttribute('data-ver')+'.';}
+    });
   });
 })();
 </script>
