@@ -153,13 +153,29 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
 .vthumb:hover .vplay{transform:scale(1.1)}
 .vthumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:2}
 .vcard h3{font-size:17px;color:#fff;padding:16px 20px}
+
+.menu{gap:20px;font-size:14px}
+.about{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.about h2{font-size:40px;letter-spacing:-.03em;line-height:1.1;margin:14px 0 16px}
+.about p{color:var(--mut);font-size:17px;margin-bottom:14px;max-width:34em}
+.about .cta-row{margin-top:22px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{border:1px solid var(--line);border-radius:20px;padding:22px;background:var(--card);transition:transform .25s,border-color .25s}
+.stat:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.45)}
+.stat b{display:block;font-size:22px;color:#fff;letter-spacing:-.02em}
+.stat small{color:var(--mut);font-size:14px}
+.stat.big{grid-column:1/-1;background:linear-gradient(145deg,rgba(34,211,238,.10),rgba(139,92,246,.14));border-color:rgba(34,211,238,.3)}
+.stat.big b{font-size:64px;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+.stat.big em{font-style:normal}
+.stat.big small{display:block;font-size:16px;margin-top:6px}
+@media(max-width:900px){.about{grid-template-columns:1fr}.about h2{font-size:30px}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="logo" href="#" aria-label="PegaSoft"><img src="logo-oscuro.png" alt="PegaSoft"></a>
-<nav class="menu"><a href="#facturacion">Facturación electrónica</a><a href="#servicios">Consultoría TI</a><a href="#monica">Mónica</a><a href="#seguridad">Seguridad</a><a href="#odoo">Odoo</a><a href="#videos">Videos</a><a href="#soporte">Soporte</a></nav>
+<nav class="menu"><a href="#facturacion">Facturación electrónica</a><a href="#servicios">Consultoría TI</a><a href="#monica">Mónica</a><a href="#seguridad">Seguridad</a><a href="#odoo">Odoo</a><a href="#videos">Videos</a><a href="#nosotros">Quiénes somos</a><a href="#soporte">Soporte</a></nav>
 <a class="btn btn-p" href="#contacto">Hablemos</a>
 </div></header>
 
@@ -253,6 +269,25 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
 <div class="step"><h3>Acompañamiento</h3><p>Soporte y mejora continua después del arranque.</p></div>
 </div></div></section>
 
+<section id="nosotros"><div class="wrap">
+<div class="about">
+<div>
+<span class="tag">QUIÉNES SOMOS</span>
+<h2>PegaSoft SAS: software que acompaña a tu empresa</h2>
+<p>Somos especialistas en desarrollo de software y facturación electrónica, con más de 24 años de experiencia ayudando a las empresas a ordenar sus procesos, proteger su información y automatizar su operación.</p>
+<p>Hoy combinamos consultoría de TI, seguridad de la información, el programa contable Mónica y la automatización con Odoo, para que tu negocio funcione desde un solo lugar.</p>
+<div class="cta-row"><a class="btn btn-p" href="#contacto">Hablemos →</a><a class="btn btn-o" href="#servicios">Ver servicios</a></div>
+</div>
+<div class="stats">
+<div class="stat big"><b><span class="count" data-to="24">24</span><em>+</em></b><small>años de experiencia</small></div>
+<div class="stat"><b>Software</b><small>desarrollo a la medida</small></div>
+<div class="stat"><b>Facturación</b><small>electrónica DIAN</small></div>
+<div class="stat"><b>Odoo</b><small>automatización de procesos</small></div>
+<div class="stat"><b>Mónica</b><small>programa contable</small></div>
+</div>
+</div>
+</div></section>
+
 <div class="final" id="contacto" style="text-align:left;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
 <div><h2>¡Hablemos de tu negocio!</h2><p>Cuéntanos qué necesitas y descubre cómo PegaSoft puede ayudarte a simplificar procesos, automatizar tareas y gestionar tu empresa desde un solo lugar.</p>
 <p style="margin:0">✉ info@pegasoft.com.co<br>☎ <a href="tel:+576015275522">+601 527 5522</a> · <a href="https://wa.me/573003450000">+57 300 345 00 00</a></p></div>
@@ -301,7 +336,7 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
 </script>
 <script>
 (function(){
-  var sel=['.head','.vcard','.grid3 .card','.mcards .card','.mside','.steps .step','.sec .wrap>div','.feat div','.odoo>div:first-child','.apps','.apps div','.final>div','.final>form'];
+  var sel=['.head','.vcard','.about>div','.stat','.grid3 .card','.mcards .card','.mside','.steps .step','.sec .wrap>div','.feat div','.odoo>div:first-child','.apps','.apps div','.final>div','.final>form'];
   var els=[].slice.call(document.querySelectorAll(sel.join(',')));
   els.forEach(function(el){
     el.classList.add('rv');
@@ -324,6 +359,20 @@ header.scrolled{background:rgba(6,10,22,.92);box-shadow:0 10px 30px rgba(0,0,0,.
       if(t){t.value='Hola, quiero información sobre Mónica '+b.getAttribute('data-ver')+'.';}
     });
   });
+})();
+</script>
+<script>
+(function(){
+  var el=document.querySelector('.count');if(!el||!('IntersectionObserver' in window))return;
+  var to=+el.getAttribute('data-to');
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  el.textContent='0';
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;io.disconnect();
+    var t0=null;function step(t){t0=t0||t;var p=Math.min((t-t0)/1400,1);el.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  });},{threshold:.5});
+  io.observe(el);
 })();
 </script>
 </body></html>
