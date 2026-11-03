@@ -536,13 +536,14 @@ header .wrap.nav{gap:18px}
 <div class="final" id="contacto" style="text-align:left;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
 <div><h2>¡Hablemos de tu negocio!</h2><p>Cuéntanos qué necesitas y descubre cómo PegaSoft puede ayudarte a simplificar procesos, automatizar tareas y gestionar tu empresa desde un solo lugar.</p>
 <p style="margin:0">🌐 <a href="https://www.pegasoft.com.co" target="_blank" rel="noopener">www.pegasoft.com.co</a><br>✉ info@pegasoft.com.co<br>☎ <a href="tel:+576015275522">+601 527 5522</a> · <a href="https://wa.me/573003450000">+57 300 345 00 00</a></p></div>
-<form style="background:rgba(6,10,22,.7);border:1px solid var(--line);border-radius:22px;padding:26px;display:grid;gap:12px;color:var(--ink)" onsubmit="return false">
+<form style="background:rgba(6,10,22,.7);border:1px solid var(--line);border-radius:22px;padding:26px;display:grid;gap:12px;color:var(--ink)" id="cform" novalidate>
 <style>.f{display:grid;gap:6px;font-size:13px;font-weight:700;color:var(--mut)}.f input,.f textarea{font:inherit;font-weight:500;color:var(--ink);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:12px 14px}.f input:focus,.f textarea:focus{outline:none;border-color:#22d3ee;box-shadow:0 0 0 3px rgba(34,211,238,.15)}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}</style>
-<div class="two"><label class="f">Nombre *<input required></label><label class="f">Empresa<input></label></div>
-<div class="two"><label class="f">Correo *<input type="email" required></label><label class="f">Teléfono<input type="tel"></label></div>
-<label class="f">¿En qué te ayudamos? *<textarea rows="3" required></textarea></label>
-<button class="btn btn-p" style="border:0;justify-content:center;cursor:pointer">Enviar mensaje →</button>
-<small style="color:var(--mut)">Tus datos se tratan según nuestra política de privacidad.</small></form></div>
+<div class="two"><label class="f">Nombre *<input name="n" required autocomplete="name"></label><label class="f">Empresa<input name="e" autocomplete="organization"></label></div>
+<div class="two"><label class="f">Correo *<input name="c" type="email" required autocomplete="email"></label><label class="f">Teléfono<input name="t" type="tel" autocomplete="tel"></label></div>
+<label class="f">¿En qué te ayudamos? *<textarea name="m" rows="3" required></textarea></label>
+<button type="submit" class="btn btn-p" style="border:0;justify-content:center;cursor:pointer">Enviar mensaje por WhatsApp →</button>
+<a id="cmail" href="mailto:info@pegasoft.com.co" style="text-align:center;font-size:13.5px;font-weight:600;color:#67e8f9;text-decoration:underline">¿Prefieres correo? Envíalo desde tu aplicación de correo</a>
+<small id="cnote" style="color:var(--mut)">Tus datos se tratan según nuestra política de privacidad.</small></form></div>
 
 <div class="dlband"><div class="wrap">
 <div><b>¿Quieres conocer todo lo que hacemos?</b><span>Descarga nuestro portafolio de productos, servicios y precios.</span></div>
@@ -731,6 +732,35 @@ header .wrap.nav{gap:18px}
     window.open('https://wa.me/573003450000?text='+encodeURIComponent(msg),'_blank','noopener');
   });
   [].forEach.call(document.querySelectorAll('[data-demo]'),function(){});
+})();
+</script>
+
+<script>
+(function(){
+  var f=document.getElementById('cform');if(!f)return;
+  var note=document.getElementById('cnote'),mail=document.getElementById('cmail');
+  function v(k){return f.elements[k].value.trim();}
+  function text(){
+    return 'Hola PegaSoft, quiero información.\nNombre: '+v('n')+(v('e')?'\nEmpresa: '+v('e'):'')+'\nCorreo: '+v('c')+(v('t')?'\nTeléfono: '+v('t'):'')+'\nMensaje: '+v('m');
+  }
+  function valid(){
+    var ok=true;
+    [].forEach.call(f.querySelectorAll('[required]'),function(x){
+      var bad=!x.value.trim()||(x.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(x.value.trim()));
+      x.style.borderColor=bad?'#f87171':'';if(bad)ok=false;
+    });
+    if(!ok)note.textContent='Revisa los campos marcados (el correo debe ser válido).';
+    return ok;
+  }
+  f.addEventListener('submit',function(e){
+    e.preventDefault();if(!valid())return;
+    note.textContent='Abriendo WhatsApp con tu mensaje…';
+    window.open('https://wa.me/573003450000?text='+encodeURIComponent(text()),'_blank','noopener');
+  });
+  mail.addEventListener('click',function(e){
+    if(!valid()){e.preventDefault();return;}
+    mail.href='mailto:info@pegasoft.com.co?subject='+encodeURIComponent('Contacto web - '+v('n'))+'&body='+encodeURIComponent(text());
+  });
 })();
 </script>
 </body></html>
