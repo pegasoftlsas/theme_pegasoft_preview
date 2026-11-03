@@ -271,13 +271,25 @@ header .wrap.nav{gap:18px}
  .burger{display:flex;margin-left:auto}
  .hcta{display:none}
 }
+
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start}
+.post{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:border-color .2s,transform .2s}
+.post:hover,.post[open]{border-color:var(--c)}
+.post summary{list-style:none;cursor:pointer;padding:24px}.post summary::-webkit-details-marker{display:none}
+.ptag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.12em;color:#67e8f9;margin-bottom:10px}
+.post h3{font-size:19px;color:#fff;line-height:1.3}
+.post summary small{display:block;margin-top:14px;color:var(--mut);font-size:13px}
+.pbody{padding:0 24px 24px;color:var(--mut);font-size:15px;line-height:1.65}
+.pbody p{margin:0 0 12px}.pbody ul{margin:0 0 14px;padding-left:20px}.pbody li{margin-bottom:8px}.pbody b{color:#fff}
+.pbody .btn{margin-top:6px}
+@media(max-width:900px){.posts{grid-template-columns:1fr}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <header><div class="wrap nav">
 <a class="logo" href="#" aria-label="PegaSoft"><img src="logo-navy.png" alt="PegaSoft"></a>
-<nav class="menu" id="menu" aria-label="Principal"><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#ef4444"></i>Facturación<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#facturacion"><b>Facturación electrónica</b><small>Cumple con la DIAN sin complicaciones</small></a><a href="#folios"><b>Planes y folios</b><small>Paquetes por versión de Mónica</small></a><a href="#facturacion"><b>Certificado electrónico</b><small>Firma y certificados digitales</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#06b6d4"></i>Mónica<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#monica"><b>Programa contable</b><small>Versiones 8.5, 9, 10 y 11</small></a><a href="#monica-videos"><b>Videos por versión</b><small>Aprende paso a paso</small></a><a href="#soporte"><b>Soporte técnico</b><small>$80.000 por hora o fracción</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#8b5cf6"></i>Servicios<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#servicios"><b>Consultoría TI</b><small>Procesos, software y automatización</small></a><a href="#nube"><b>Nube y escritorios remotos</b><small>Tu información desde cualquier lugar</small></a><a href="#seguridad"><b>Seguridad</b><small>Protección de tu información</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#f59e0b"></i>Odoo<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#odoo"><b>Odoo 19</b><small>ERP todo en uno para tu empresa</small></a><a href="#odoo"><b>Oferta Odoo 19</b><small>Implementación con acompañamiento</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#22c55e"></i>Más<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#videos"><b>Videos</b><small>Canal de YouTube PegaSoft</small></a><a href="#nosotros"><b>Quiénes somos</b><small>+24 años de experiencia</small></a><a href="#contacto"><b>Contacto</b><small>Escríbenos o llámanos</small></a></div></div><a class="ml" href="#soporte">Soporte</a></nav>
+<nav class="menu" id="menu" aria-label="Principal"><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#ef4444"></i>Facturación<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#facturacion"><b>Facturación electrónica</b><small>Cumple con la DIAN sin complicaciones</small></a><a href="#folios"><b>Planes y folios</b><small>Paquetes por versión de Mónica</small></a><a href="#facturacion"><b>Certificado electrónico</b><small>Firma y certificados digitales</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#06b6d4"></i>Mónica<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#monica"><b>Programa contable</b><small>Versiones 8.5, 9, 10 y 11</small></a><a href="#monica-videos"><b>Videos por versión</b><small>Aprende paso a paso</small></a><a href="#soporte"><b>Soporte técnico</b><small>$80.000 por hora o fracción</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#8b5cf6"></i>Servicios<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#servicios"><b>Consultoría TI</b><small>Procesos, software y automatización</small></a><a href="#nube"><b>Nube y escritorios remotos</b><small>Tu información desde cualquier lugar</small></a><a href="#seguridad"><b>Seguridad</b><small>Protección de tu información</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#f59e0b"></i>Odoo<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#odoo"><b>Odoo 19</b><small>ERP todo en uno para tu empresa</small></a><a href="#odoo"><b>Oferta Odoo 19</b><small>Implementación con acompañamiento</small></a></div></div><div class="mi"><button type="button" class="mb" aria-expanded="false" aria-haspopup="true"><i style="background:#22c55e"></i>Más<svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button><div class="dd"><a href="#videos"><b>Videos</b><small>Canal de YouTube PegaSoft</small></a><a href="#blog"><b>Blog</b><small>Guías sobre Mónica, DIAN y Odoo</small></a><a href="#nosotros"><b>Quiénes somos</b><small>+24 años de experiencia</small></a><a href="#contacto"><b>Contacto</b><small>Escríbenos o llámanos</small></a></div></div><a class="ml" href="#soporte">Soporte</a></nav>
 <a class="btn btn-p hcta" href="#contacto"><span class="dot"></span>Hablemos <span>→</span></a>
 <button type="button" class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
 </div></header>
@@ -408,6 +420,32 @@ header .wrap.nav{gap:18px}
 <p style="text-align:center;margin-top:28px"><a class="btn btn-o" href="https://www.youtube.com/@PEGASOFTLTDA-f5k" target="_blank" rel="noopener">Ver canal en YouTube ↗</a></p>
 </div></section>
 
+<section id="blog" style="padding-top:0"><div class="wrap">
+<div class="head"><span class="tag">BLOG</span><h2>Guías para tu empresa</h2><p>Consejos simples sobre Mónica, facturación electrónica y Odoo.</p></div>
+<div class="posts">
+<details class="post"><summary><span class="ptag">MÓNICA</span><h3>Cómo elegir la versión de Mónica para tu empresa</h3><small>4 min de lectura · Leer artículo ↓</small></summary>
+<div class="pbody"><p>Mónica se ofrece en varias versiones (8.5, 9, 10 y 11) y la mejor no es siempre la más nueva. Estas preguntas te ayudan a decidir:</p>
+<ul><li><b>¿Ya usas una versión?</b> Si tu operación funciona bien, pregúntanos primero si puedes seguir en ella y solo actualizar la facturación electrónica.</li>
+<li><b>¿Cuántas personas la usan a la vez?</b> Más usuarios y más sedes suelen pedir una versión reciente y, muchas veces, trabajar desde la nube.</li>
+<li><b>¿Facturas mucho?</b> Calcula tus folios al mes: cada folio equivale a una factura electrónica y los paquetes grandes salen más baratos por folio.</li>
+<li><b>¿Necesitas acceso remoto?</b> Con un escritorio remoto tu equipo trabaja desde casa o desde otra sede con la misma información.</li></ul>
+<p>Si dudas, escríbenos con tu versión actual y te recomendamos el camino más sencillo. El soporte es el mismo para todas las versiones.</p><a class="btn btn-p" href="#contacto" data-msg="Hola, quiero que me ayuden a elegir la versión de Mónica.">Hablar con PegaSoft →</a></div></details>
+<details class="post"><summary><span class="ptag">FACTURACIÓN</span><h3>Facturación electrónica: qué es un folio y cuántos necesito</h3><small>3 min de lectura · Leer artículo ↓</small></summary>
+<div class="pbody"><p>En facturación electrónica, un <b>folio</b> es un cupo para una factura. Cada factura que emites consume un folio, así de simple.</p>
+<ul><li><b>Cuenta tus facturas del mes</b> y multiplica por 12 para estimar el año.</li>
+<li><b>Deja un margen</b> para temporadas altas, notas crédito y reenvíos.</li>
+<li><b>Compara paquetes:</b> mientras más folios compras, menor el valor aproximado por folio.</li></ul>
+<p>Además, si la DIAN presenta intermitencias, tu factura puede quedar enviada en la DIAN pero no reflejarse en tu programa. Tenemos videos que explican cómo revisar esos casos.</p><a class="btn btn-p" href="#contacto" data-msg="Hola, quiero cotizar un paquete de folios de facturación electrónica.">Hablar con PegaSoft →</a></div></details>
+<details class="post"><summary><span class="ptag">ODOO</span><h3>Cuándo conviene automatizar tu empresa con Odoo</h3><small>4 min de lectura · Leer artículo ↓</small></summary>
+<div class="pbody"><p>Odoo reúne en un solo sistema ventas, inventario, compras, contabilidad y más. Suele convenir cuando:</p>
+<ul><li>Pasas datos de un Excel a otro y se cometen errores.</li>
+<li>Tus áreas (ventas, bodega, contabilidad) no ven la misma información.</li>
+<li>Quieres reportes al día sin esperar al cierre de mes.</li>
+<li>Necesitas crecer sin sumar más tareas manuales.</li></ul>
+<p>Lo recomendable es empezar por un proceso (por ejemplo, ventas y facturación) y agregar módulos por etapas. Con un diagnóstico inicial definimos por dónde comenzar.</p><a class="btn btn-p" href="#contacto" data-msg="Hola, quiero un diagnóstico para automatizar mi empresa con Odoo.">Hablar con PegaSoft →</a></div></details>
+</div>
+</div></section>
+
 <section style="padding-top:0"><div class="wrap">
 <div class="head"><span class="tag">CÓMO TRABAJAMOS</span><h2>Un proceso claro, sin sorpresas</h2></div>
 <div class="steps">
@@ -523,7 +561,7 @@ header .wrap.nav{gap:18px}
 </script>
 <script>
 (function(){
-  var sel=['.head','.vcard','.plan','.folio','.support','.promo','.shot','.about>div','.stat','.grid3 .card','.mcards .card','.mside','.steps .step','.sec .wrap>div','.feat div','.odoo>div:first-child','.apps','.apps div','.final>div','.final>form'];
+  var sel=['.head','.vcard','.post','.plan','.folio','.support','.promo','.shot','.about>div','.stat','.grid3 .card','.mcards .card','.mside','.steps .step','.sec .wrap>div','.feat div','.odoo>div:first-child','.apps','.apps div','.final>div','.final>form'];
   var els=[].slice.call(document.querySelectorAll(sel.join(',')));
   els.forEach(function(el){
     el.classList.add('rv');
